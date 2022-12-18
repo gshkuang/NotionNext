@@ -9,7 +9,7 @@ import MenuButtonGroup from './MenuButtonGroup'
 import SearchDrawer from './SearchDrawer'
 import TagGroups from './TagGroups'
 import CONFIG_NEXT from '../config_next'
-
+import SearchInput from './SearchInput'
 let windowTop = 0
 
 /**
@@ -127,7 +127,7 @@ const TopNav = props => {
 
           {/* 右侧功能 */}
           <div className="mr-1 flex justify-end items-center text-sm space-x-4 font-serif dark:text-gray-200">
-            <div
+            {/* <div
               className="cursor-pointer block"
               onClick={() => {
                 searchDrawer?.current?.show()
@@ -135,7 +135,12 @@ const TopNav = props => {
             >
               <i className="mr-2 fas fa-search" />
               {locale.NAV.SEARCH}
-            </div>
+            </div> */}
+            {CONFIG_NEXT.MENU_SEARCH && (
+              <div className="px-2 pt-2 font-sans">
+                <SearchInput {...props} />
+              </div>
+            )}
           </div>
         </div>
         <Collapse type="vertical" isOpen={isOpen}>

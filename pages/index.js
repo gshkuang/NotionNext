@@ -13,7 +13,6 @@ export async function getStaticProps() {
   const from = 'index'
   const props = await getGlobalNotionData({ from })
   const { siteInfo } = props
-  console.log(props.allPages) // todo
   props.posts = props.allPages.filter(
     page => page.type === 'Post' && page.status === 'Published'
   )
